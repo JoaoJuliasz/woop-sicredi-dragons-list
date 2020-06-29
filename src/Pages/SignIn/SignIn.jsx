@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import {userLogged} from '../../redux/user/user.actions'
+import { userLogged } from '../../redux/user/user.actions'
 import './SignIn.styles.scss'
+import InputField from '../../Components/InputField/InputField'
 
 const SignIn = ({ user, userLogged, history }) => {
     const [login, setLogin] = useState({ username: '', password: '' })
+    const [wrongLogin, setWrongLogin] = useState(false)
     const { username, password } = login
 
     const handleChange = event => {
@@ -21,25 +23,24 @@ const SignIn = ({ user, userLogged, history }) => {
             history.push('/')
         } else {
             console.warn('Usuario invalido')
+            setWrongLogin(true)
         }
     }
     return (
         <div className="sign-in-container">
             <div className='sign-in-align'>
+                <h2>Sign In</h2>
                 <form className="sign-in-form">
-                    <div className="credential-container">
-                        <input className='login-input' onChange={handleChange} type="text" name="username" />
-                        <label className={`${username ? 'shrink' : ''} form-input-label`}>Username:</label>
-                    </div>
-                    <div className="credential-container">
-                        <input className='login-input' onChange={handleChange} type="password" name="password" />
-                        <label className={`${password ? 'shrink' : ''} form-input-label`}>Password:</label>
-                    </div>
+                    <InputField shrinkvalidation={username} handleChange={handleChange} labelValue="Username:" type="text" name="username"/>
+                    <InputField shrinkvalidation={password} handleChange={handleChange} labelValue="Password:" type="password" name="password" />
                     <input className="submit-form-button" onClick={handleClick} type="submit" value="Submit" />
+                    {
+                        wrongLogin ? <p>Usuário e/ou senha inválidos</p> : <></>
+                    }
                 </form>
             </div>
         </div>
-    );
+    )
 }
 
 const mapStateToProps = state => {

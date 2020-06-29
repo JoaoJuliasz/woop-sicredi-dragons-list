@@ -1,10 +1,20 @@
-import React, { useState } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { withRouter, } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchDragons } from '../../redux/dragons/dragons.actions'
 import axios from 'axios'
-const Dragon = ({ dragon, history, fetchDragons }) => {
-    const [dragonUpdateValues, setDragonUpdateValues] = useState({ id: dragon.id, name: dragon.name, createdAt: new Date().toISOString(), type: dragon.type, histories: [], })
+import InputField from '../InputField/InputField'
+import DragonConfirm from '../DragonConfirm/DragonConfirm'
+import './Dragon.styles.scss'
+const Dragon = ({ dragon, history, match, fetchDragons }) => {
+    // const [dragon, setDragon] = useState({})
+    const [dragonUpdateValues, setDragonUpdateValues] = useState({
+        id: dragon.id,
+        name: dragon.name,
+        createdAt: new Date().toISOString(),
+        type: dragon.type,
+        histories: [],
+    })
     const { name, type } = dragonUpdateValues
 
     const handleChange = event => {
@@ -24,26 +34,31 @@ const Dragon = ({ dragon, history, fetchDragons }) => {
     }
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
-                <label>Dragon name:</label>
-                <input onChange={handleChange} name="name" type="text" value={name} />
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
+        <div className="update-dragon-container">
+            <InputField shrinkvalidation={name}
+                handleChange={handleChange}
+                labelValue="Dragon name:"
+                type="text"
+                name="name"
+                value={name}
+            />
+
+            <div className="dragon-creation-date">
                 <label>Created dragon at: </label>
                 <label>{dragon.createdAt.slice(0, 10)}</label>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
-                <label>Dragon type: </label>
-                <input onChange={handleChange} name="type" type="text" value={type} />
-            </div>
-            <div>
-                <Link to='/' style={{ padding: '10px' }}>Vem</Link>
-                <button onClick={() => handleClick(dragon.id)} style={{ padding: '10px' }}>Salvar</button>
-            </div>
+
+            <InputField shrinkvalidation={name}
+                handleChange={handleChange}
+                labelValue="Dragon type:"
+                type="text"
+                name="type"
+                value={type} />
+
+            <DragonConfirm handleClick={() => handleClick(dragon.id)} />
         </div>
-    );
-};
+    )
+}
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -51,4 +66,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(Dragon));
+export default withRouter(connect(null, mapDispatchToProps)(Dragon))

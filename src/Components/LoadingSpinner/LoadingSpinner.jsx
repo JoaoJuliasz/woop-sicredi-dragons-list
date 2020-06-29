@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import './LoadingSpinner.styles.scss'
 const LoadingSpinner = () => (
-    <div class="lds-ring">
+    <div className="lds-ring">
         <div></div>
         <div></div>
         <div></div>
@@ -9,4 +9,4 @@ const LoadingSpinner = () => (
     </div>
 )
 
-export default LoadingSpinner;
+export default LoadingSpinner

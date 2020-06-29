@@ -1,0 +1,17 @@
+.home-container {
+    padding: 15px;
+    width: 100%;
+    .dragons-search-field {
+        width: 250px;
+        height: 50px;
+        outline: none;
+        border: none;
+    }
+    h2 {
+        color: #aa1e1e;
+    }
+    .dragons-container {
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

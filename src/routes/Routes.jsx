@@ -1,10 +1,10 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, } from 'react-router-dom'
 import { connect } from 'react-redux'
-import SignIn from '../Components/SignIn/SignIn'
-import Home from '../Components/Home/Home'
+import SignIn from '../Pages/SignIn/SignIn'
+import Home from '../Pages/Home/Home'
 import Dragon from '../Components/Dragon/Dragon'
-import CreateDragon from '../Components/CreateDragon/CreateDragon';
+import CreateDragon from '../Pages/CreateDragon/CreateDragon';
 
 const Routes = ({ dragons }) => {
     const renderDragon = (routerProps) => {
@@ -17,6 +17,7 @@ const Routes = ({ dragons }) => {
             <Route exact path='/' component={Home} />
             <Route path='/signin' component={SignIn} />
             <Route exact path='/dragon/:id' component={routerProps => renderDragon(routerProps)} />
+            {/* <Route exact path='/dragon/:id' component={Dragon} /> */}
             <Route path='/create-dragon' component={CreateDragon} />
         </Switch>
     );

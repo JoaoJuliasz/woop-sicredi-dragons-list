@@ -1,0 +1,15 @@
+$dark-color: #aa1e1e;
+.dragon-confirm-container {
+    a {
+        padding: 10px;
+        color: $dark-color;
+    }
+    button {
+        background: none;
+        padding: 10px 15px;
+        border: 1px solid $dark-color;
+        color: $dark-color;
+        cursor: pointer;
+        font-weight: bold;
+    }
+}

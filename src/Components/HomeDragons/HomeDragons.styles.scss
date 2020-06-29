@@ -1,0 +1,30 @@
+$red-color: #aa1e1e;;
+
+.home-dragons-container {
+    padding: 15px;
+
+    .update-dragon-link {
+        color: #aa1e1e;
+        display: flex;
+        flex-direction: column; 
+
+        img {
+            width: 60%;
+            height: 130px;
+            margin: auto;
+        }
+    }
+
+    button {
+        background: none;
+        border: 1px solid $red-color;
+        padding: 10px 25px;
+        color: $red-color;
+        cursor: pointer;
+
+        &:hover {
+            color: #fff;
+            background: $red-color !important;
+        }
+    }
+}

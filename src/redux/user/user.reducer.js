@@ -1,4 +1,4 @@
-import { USER_LOGGED } from './user.types'
+import { USER_LOGGED, USER_LOGGED_OFF } from './user.types'
 
 const initalState = {
     adminLogin: { username: 'admin', password: 'admin' },
@@ -11,6 +11,11 @@ const userReducer = (state = initalState, action) => {
             return {
                 ...state,
                 userLogged: true
+            }
+        case USER_LOGGED_OFF:
+            return {
+                ...state,
+                userLogged: false
             }
         default: return state
     }

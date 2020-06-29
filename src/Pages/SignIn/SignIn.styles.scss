@@ -1,0 +1,41 @@
+$white-color: #fff;
+$dark-color: #333;
+.sign-in-container{
+    background-image: url('../../assets/background.png');
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #aa1e1e;
+    .sign-in-align {
+        position: relative;
+        top: 15%;
+        background: $white-color;
+        width: 30%;
+        margin: auto;
+        height: 60%;
+        h2 {
+            border-bottom: 1px solid $dark-color;
+            width: 80%;
+            margin: 0 auto;
+            padding: 15px;
+        }
+    }
+    .sign-in-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p {
+            color: red;
+        }
+        .submit-form-button {
+            width: 200px;
+            height: 50px;
+            cursor: pointer;
+            background: transparent;
+            color: $dark-color;
+            border: 1px solid $dark-color;
+        }
+    }
+}

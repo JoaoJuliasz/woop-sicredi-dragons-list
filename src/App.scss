@@ -1,0 +1,22 @@
+$font-color: #333;
+* {
+  @import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
+}
+.App {
+  text-align: center;
+  font-family: 'Piedra', cursive;
+  color: $font-color;
+  background-image: url('./assets/site-background.jpg');
+  overflow: scroll;
+  background-color: #585858;
+  background-blend-mode: screen;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color:$font-color;
+  }
+}

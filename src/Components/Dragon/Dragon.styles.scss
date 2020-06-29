@@ -1,0 +1,12 @@
+.update-dragon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .dragon-creation-date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+}
