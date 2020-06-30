@@ -11,5 +11,10 @@ $dark-color: #aa1e1e;
         color: $dark-color;
         cursor: pointer;
         font-weight: bold;
+
+        &:hover {
+            color: #fff;
+            background: $dark-color !important;
+        }
     }
 }

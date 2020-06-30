@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { withRouter, } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchDragons } from '../../redux/dragons/dragons.actions'
 import axios from 'axios'
-import InputField from '../InputField/InputField'
-import DragonConfirm from '../DragonConfirm/DragonConfirm'
-import './Dragon.styles.scss'
-const Dragon = ({ dragon, history, match, fetchDragons }) => {
-    // const [dragon, setDragon] = useState({})
+import InputField from '../../Components/InputField/InputField'
+import DragonConfirm from '../../Components/DragonConfirm/DragonConfirm'
+import './UpdateDragon.styles.scss'
+const Dragon = ({ dragon, history,fetchDragons }) => {
     const [dragonUpdateValues, setDragonUpdateValues] = useState({
         id: dragon.id,
         name: dragon.name,

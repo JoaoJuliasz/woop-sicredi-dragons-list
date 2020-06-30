@@ -4,6 +4,8 @@ $dark-color: #333;
     background-image: url('../../assets/background.png');
     width: 100vw;
     height: 100vh;
+    background-color: #151414;
+    background-blend-mode: screen;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,7 +16,7 @@ $dark-color: #333;
         background: $white-color;
         width: 30%;
         margin: auto;
-        height: 60%;
+        height: 65%;
         h2 {
             border-bottom: 1px solid $dark-color;
             width: 80%;
@@ -27,7 +29,7 @@ $dark-color: #333;
         flex-direction: column;
         align-items: center;
         p {
-            color: red;
+            color: #aa1e1e;
         }
         .submit-form-button {
             width: 200px;
@@ -36,6 +38,17 @@ $dark-color: #333;
             background: transparent;
             color: $dark-color;
             border: 1px solid $dark-color;
+        }
+    }
+
+    @media(max-width: 650px){
+        .sign-in-align {
+            width: 85%;
+        }
+    }
+    @media(min-width: 651px) and (max-width: 1024px){
+        .sign-in-align {
+            width: 45%;
         }
     }
 }

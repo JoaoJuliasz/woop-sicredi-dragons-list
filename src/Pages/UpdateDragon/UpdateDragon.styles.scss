@@ -2,11 +2,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    position: relative;
+    margin-top: 5%;
+    color: #aa1e1e;
     .dragon-creation-date {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 20px;
+        
+        label {
+            padding: 10px;
+        }
     }
 }
